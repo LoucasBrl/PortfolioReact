@@ -1,8 +1,8 @@
 ﻿import DonutScene from './Scenes/DonutScene'
-import { motion } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 
 function MainPage() {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -13,9 +13,16 @@ function MainPage() {
     }
   }
 
-  const item = {
+  const item: Variants = {
     hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+    show: { 
+      y: 0, 
+      opacity: 1, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1] 
+      } 
+    }
   }
 
   return (
@@ -56,9 +63,9 @@ function MainPage() {
             whileHover={{ y: -5, scale: 1.02 }}
             className="flex-1 max-w-md bg-white/30 backdrop-blur-xl border border-[#3D4D55]/20 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
           >
-            <h3 className="font-display text-2xl text-[#10232A] mb-4">A propos</h3>
+            <h3 className="font-display text-2xl text-[#10232A] mb-4">À propos</h3>
             <p className="font-body text-[#10232A]/80 text-lg leading-relaxed">
-              Je m'appelle Loucas et l'informatique me passionne. Et si on apprenait à se connaitre ?
+              Passionné par la cybersécurité et l'architecture réseau, je conçois des infrastructures sécurisées et robustes.
             </p>
           </motion.div>
 
@@ -67,9 +74,9 @@ function MainPage() {
             whileHover={{ y: -5, scale: 1.02 }}
             className="flex-1 max-w-md bg-white/30 backdrop-blur-xl border border-[#3D4D55]/20 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
           >
-             <h3 className="font-display text-2xl text-[#10232A] mb-4">Actuellement</h3>
+             <h3 className="font-display text-2xl text-[#10232A] mb-4">Parcours</h3>
              <p className="font-body text-[#10232A]/80 text-lg leading-relaxed">
-               Originaire des montagnes des hautes-alpes, Je suis actuellement étudiant à l'IUT2 de Grenoble en 2ème année de BUT Informatique.
+               Étudiant en 3ème année de BUT Informatique à l'IUT2 de Grenoble, je me spécialise en administration système, sécurité des réseaux et cloud computing.
              </p>
           </motion.div>
         </div>
