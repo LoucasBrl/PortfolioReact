@@ -1,1 +1,2 @@
-export const MESH_COLOR = '#A79E9C';
+export const MESH_COLOR = '#818cf8';
+

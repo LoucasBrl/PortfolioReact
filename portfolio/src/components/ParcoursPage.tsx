@@ -1,32 +1,20 @@
-import BookScene from './Scenes/BookScene'
-import ComputerScene from './Scenes/ComputerScene'
-import SittedScene from './Scenes/SittedScene'
+﻿import Timeline from './Timeline'
+
 function ParcoursPage() {
   return (
-    <>
-      <div id="parcourspage" className='bgc1 h-[100vh] w-full flex flex-col items-center justify-center relative'>
-        <h1
-              className="m-0 leading-none txtc1 text-[clamp(5rem,10vw,10rem)]"
-              style={{ fontFamily: "'Vina Sans', sans-serif" }}
-            >
-              Mon parcours
-            </h1>
-        <div className='relative mt-[10%]'>
-            <img src="/testbgportfolio.png" alt="" />
-            <div className='absolute left-[67%] top-[-30%] w-[30%] h-[100%]'>
-                <SittedScene/>
-            </div>
-            <h2 className='text-center left-[42%] top-[-25%] absolute text-2xl bgc2 p-3 rounded-xl m-5 border-4 border-black' style={{ fontFamily: "'Outfit', sans-serif" }}>IUT2 Informatique<br/>Grenoble</h2>
-            <div className='absolute left-[36%] top-[-10%] w-[30%] h-[100%]'>
-                <ComputerScene/>
-            </div>
-            <h2 className='text-center left-[14%] top-[-5%] absolute text-2xl bgc2 p-3 rounded-xl m-5 border-4 border-black' style={{ fontFamily: "'Outfit', sans-serif" }}>Lycée d'altitude<br/>Briancon</h2>
-            <div className='absolute left-[7%] top-[10%] w-[30%] h-[100%]'>
-                <BookScene/>
-            </div>
-        </div>
+    <section id="parcourspage" className="relative min-h-screen w-full flex flex-col items-center py-24 bg-gradient-to-b from-white to-slate-100">
+      
+      <div className="z-10 w-full flex flex-col items-center">
+        <h2 
+          className="text-[clamp(3rem,8vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900 mb-12 text-center leading-none"
+          style={{ fontFamily: "'Vina Sans', sans-serif" }}
+        >
+          MON PARCOURS
+        </h2>
+        
+        <Timeline />
       </div>
-    </>
+    </section>
   )
 }
 
