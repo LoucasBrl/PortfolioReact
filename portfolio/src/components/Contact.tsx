@@ -12,7 +12,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contactpage" className="relative min-h-[80vh] w-full py-24 px-6 flex flex-col items-center justify-center bg-gradient-to-t from-slate-200 to-white overflow-hidden">
+    <section id="contactpage" className="relative min-h-[80vh] w-full py-24 px-6 flex flex-col items-center justify-center bg-gradient-to-t from-[#d8cfc9] to-[#f0eceb] overflow-hidden">
         
         {/* Background Scene */}
         <div className="absolute right-[-10%] bottom-[-20%] w-[60%] h-[80%] opacity-30 pointer-events-none z-0">
@@ -21,7 +21,7 @@ export default function Contact() {
 
         <div className="z-10 w-full max-w-6xl flex flex-col items-center">
             <h2 
-                className="text-[clamp(3rem,8vw,8rem)] text-slate-800 mb-16 text-center leading-none tracking-tighter"
+                className="text-[clamp(3rem,8vw,8rem)] text-[#10232A] mb-16 text-center leading-none tracking-tighter"
                 style={{ fontFamily: "'Vina Sans', sans-serif" }}
             >
                 ME CONTACTER
@@ -40,11 +40,11 @@ export default function Contact() {
                         whileHover={{ y: -10 }}
                         className="bg-white/60 backdrop-blur-xl border border-white/50 rounded-3xl p-8 flex flex-col items-center text-center shadow-lg hover:shadow-2xl hover:bg-white/80 transition-all group cursor-pointer block"
                     >
-                        <div className="w-16 h-16 rounded-full bg-indigo-50 text-indigo-500 flex items-center justify-center text-3xl mb-6 group-hover:bg-indigo-500 group-hover:text-white transition-colors mx-auto">
+                        <div className="w-16 h-16 rounded-full bg-[#10232A]/10 text-[#10232A] flex items-center justify-center text-3xl mb-6 group-hover:bg-[#10232A] group-hover:text-white transition-colors mx-auto">
                             <FontAwesomeIcon icon={card.icon} />
                         </div>
-                        <h3 className="font-display text-2xl text-slate-800 mb-2">{card.title}</h3>
-                        <p className="font-body text-slate-500 text-lg break-all">{card.value}</p>
+                        <h3 className="font-display text-2xl text-[#10232A] mb-2">{card.title}</h3>
+                        <p className="font-body text-[#3D4D55] text-lg break-all">{card.value}</p>
                     </motion.a>
                 ))}
             </div>

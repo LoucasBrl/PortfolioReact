@@ -10,7 +10,7 @@ interface TimelineItemProps {
     location: string;
     date: string;
     description: string;
-    Scene: React.ElementType;
+    Scene: React.ComponentType;
   };
   index: number;
 }
@@ -51,22 +51,22 @@ function TimelineItem({ data, index }: TimelineItemProps) {
       className={`flex flex-col md:flex-row items-center justify-center w-full mb-24 relative ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
     >
       {/* Content Side */}
-      <div className={`w-full md:w-5/12 px-6 flex flex-col ${isEven ? 'items-end text-right' : 'items-start text-left'}`}>
+      <div className={`w-full md:w-5/12 px-6 pl-12 md:pl-6 flex flex-col items-start text-left ${isEven ? 'md:items-end md:text-right' : 'md:items-start md:text-left'}`}>
         <div className="bg-glass-surface backdrop-blur-md border border-glass-border p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all w-full max-w-md">
-          <span className="font-display text-indigo-500 text-xl tracking-wider">{data.date}</span>
-          <h3 className="font-display text-3xl text-slate-800 mt-2 mb-1">{data.title}</h3>
-          <h4 className="font-body font-bold text-slate-500 mb-4">{data.location}</h4>
-          <p className="font-body text-slate-600 leading-relaxed text-lg">
+          <span className="font-display text-[#3D4D55] text-xl tracking-wider">{data.date}</span>
+          <h3 className="font-display text-3xl text-[#10232A] mt-2 mb-1">{data.title}</h3>
+          <h4 className="font-body font-bold text-[#A79E9C] mb-4">{data.location}</h4>
+          <p className="font-body text-[#10232A]/80 leading-relaxed text-lg">
             {data.description}
           </p>
         </div>
       </div>
 
       {/* Center Line Point */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white border-4 border-indigo-500 z-20 hidden md:block shadow-[0_0_0_4px_rgba(99,102,241,0.2)]"></div>
+      <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#d8cfc9] border-4 border-[#10232A] z-20 hidden md:block shadow-[0_0_0_4px_rgba(16,35,42,0.2)] top-1/2 -translate-y-1/2"></div>
 
       {/* 3D Scene Side */}
-      <div className={`w-full md:w-5/12 h-[300px] px-6 ${isEven ? 'items-start' : 'items-end'} flex flex-col`}>
+      <div className={`w-full md:w-5/12 h-[300px] px-6 pl-12 md:pl-6 flex flex-col items-center ${isEven ? 'md:items-start' : 'md:items-end'} mt-8 md:mt-0`}>
           <div className="w-full h-full relative rounded-2xl overflow-hidden bg-glass-surface/30 border border-white/20">
              <data.Scene />
           </div>
@@ -93,10 +93,10 @@ export default function Timeline() {
     <div ref={ref} className="relative w-full max-w-7xl mx-auto py-20 px-4">
       
       {/* Central Line */}
-      <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-slate-200 -translate-x-1/2 rounded-full hidden md:block">
+      <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-[#d8cfc9]/30 -translate-x-1/2 rounded-full">
         <motion.div 
             style={{ scaleY, transformOrigin: "top" }}
-            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-indigo-500 via-purple-500 to-indigo-500 rounded-full"
+            className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#10232A] via-[#3D4D55] to-[#10232A] rounded-full"
         />
       </div>
 

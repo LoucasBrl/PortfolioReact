@@ -19,7 +19,7 @@ function MainPage() {
   }
 
   return (
-    <section id="mainpage" className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-slate-100 to-indigo-50">
+    <section id="mainpage" className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-[#f5f2f0] to-[#e3dedb] py-20 px-4">
       
       {/* 3D Scene Background */}
       <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
@@ -34,16 +34,16 @@ function MainPage() {
       >
         
         {/* Hero Title */}
-        <div className="text-center relative">
+        <div className="text-center relative z-20 w-full flex flex-col items-center justify-center">
           <motion.h1 
             variants={item}
-            className="font-display text-[clamp(4rem,15vw,16rem)] leading-none text-slate-900 tracking-tighter"
+            className="font-display text-[clamp(8rem,30vw,30rem)] leading-[0.7] text-[#10232A] tracking-tight mix-blend-overlay opacity-90 select-none"
           >
             LOUCAS
           </motion.h1>
           <motion.h2 
             variants={item}
-            className="font-body font-bold italic text-[clamp(2rem,6vw,6rem)] leading-none bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-600 absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-full mix-blend-multiply"
+            className="font-body font-black italic text-[clamp(3rem,12vw,12rem)] leading-none text-[#3D4D55]/90 absolute top-[70%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full z-30 pointer-events-none"
           >
             BURELLIER
           </motion.h2>
@@ -54,10 +54,10 @@ function MainPage() {
           <motion.div 
             variants={item}
             whileHover={{ y: -5, scale: 1.02 }}
-            className="flex-1 max-w-md bg-white/40 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
+            className="flex-1 max-w-md bg-white/30 backdrop-blur-xl border border-[#3D4D55]/20 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
           >
-            <h3 className="font-display text-2xl text-indigo-900 mb-4">A propos</h3>
-            <p className="font-body text-slate-700 text-lg leading-relaxed">
+            <h3 className="font-display text-2xl text-[#10232A] mb-4">A propos</h3>
+            <p className="font-body text-[#10232A]/80 text-lg leading-relaxed">
               Je m'appelle Loucas et l'informatique me passionne. Et si on apprenait à se connaitre ?
             </p>
           </motion.div>
@@ -65,16 +65,19 @@ function MainPage() {
           <motion.div 
             variants={item}
             whileHover={{ y: -5, scale: 1.02 }}
-            className="flex-1 max-w-md bg-white/40 backdrop-blur-xl border border-white/50 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
+            className="flex-1 max-w-md bg-white/30 backdrop-blur-xl border border-[#3D4D55]/20 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all"
           >
-             <h3 className="font-display text-2xl text-indigo-900 mb-4">Actuellement</h3>
-             <p className="font-body text-slate-700 text-lg leading-relaxed">
+             <h3 className="font-display text-2xl text-[#10232A] mb-4">Actuellement</h3>
+             <p className="font-body text-[#10232A]/80 text-lg leading-relaxed">
                Originaire des montagnes des hautes-alpes, Je suis actuellement étudiant à l'IUT2 de Grenoble en 2ème année de BUT Informatique.
              </p>
           </motion.div>
         </div>
 
       </motion.div>
+      
+      {/* Gradient Fade Divider */}
+      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none"></div>
     </section>
   )
 }

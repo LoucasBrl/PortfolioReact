@@ -1,4 +1,4 @@
-﻿import { useCallback, useRef, useState, useMemo, useEffect } from 'react';
+﻿import { useCallback, useRef, useState, useEffect } from 'react';
 import ForceGraph3D from 'react-force-graph-3d';
 import { knowledgeNodes, knowledgeLinks } from '../data/knowledge';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -295,13 +295,13 @@ export default function KnowledgeMap() {
         
         {/* Header */}
         <div className="flex justify-between items-start pointer-events-auto">
-             <Link to="/" className="bg-white/10 backdrop-blur-md p-3 rounded-full hover:bg-white/20 text-white transition-all border border-white/10 group">
+             <Link to="/" className="bg-[#10232A]/80 backdrop-blur-md p-3 rounded-full hover:bg-[#3D4D55] text-[#d8cfc9] transition-all border border-[#d8cfc9]/20 group shadow-lg">
                 <FontAwesomeIcon icon={faArrowLeft} className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
              </Link>
              
-             <div className="bg-black/40 backdrop-blur-md border border-white/10 px-6 py-2 rounded-full">
-                 <h2 className="text-white font-display text-xl tracking-widest text-center flex gap-3 items-center">
-                    <FontAwesomeIcon icon={faProjectDiagram} className="text-indigo-500"/>
+             <div className="bg-[#10232A]/90 backdrop-blur-md border border-[#d8cfc9]/30 px-6 py-2 rounded-full shadow-lg">
+                 <h2 className="text-[#d8cfc9] font-display text-xl tracking-widest text-center flex gap-3 items-center">
+                    <FontAwesomeIcon icon={faProjectDiagram} className="text-[#d8cfc9]/80"/>
                     NEXUS // CYBER
                  </h2>
              </div>
@@ -314,7 +314,7 @@ export default function KnowledgeMap() {
              <motion.div 
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white/20 text-center pointer-events-none"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#d8cfc9]/40 text-center pointer-events-none"
              >
                 <div className="text-4xl animate-pulse font-display mb-2">INITIALIZING...</div>
                 <div className="font-mono text-sm">[CLICK TO EXPLORE NODES]</div>
@@ -328,18 +328,18 @@ export default function KnowledgeMap() {
                     initial={{ x: 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: 100, opacity: 0 }}
-                    className="absolute right-0 top-20 bottom-20 w-full md:w-96 bg-black/80 backdrop-blur-xl border-l border-white/10 p-8 pointer-events-auto overflow-y-auto shadow-2xl custom-scrollbar"
+                    className="absolute right-0 top-20 bottom-20 w-full md:w-96 bg-[#10232A]/95 backdrop-blur-xl border-l border-[#d8cfc9]/20 p-8 pointer-events-auto overflow-y-auto shadow-2xl custom-scrollbar"
                 >
                     <div className="flex items-center justify-between mb-6">
-                        <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest border border-indigo-400/30 px-2 py-1 rounded">{selectedNode.group}</span>
+                        <span className="text-xs font-bold text-[#d8cfc9] uppercase tracking-widest border border-[#d8cfc9]/30 px-2 py-1 rounded bg-[#3D4D55]/20">{selectedNode.group}</span>
                         <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
                     </div>
                     
-                    <h1 className="text-4xl font-display text-white mb-6 leading-none tracking-wide">{selectedNode.label}</h1>
+                    <h1 className="text-4xl font-display text-[#f5f2f0] mb-6 leading-none tracking-wide">{selectedNode.label}</h1>
                     
-                    <div className="h-[1px] w-full bg-gradient-to-r from-indigo-600 to-transparent mb-8"></div>
+                    <div className="h-[1px] w-full bg-gradient-to-r from-[#3D4D55] to-transparent mb-8"></div>
                     
-                    <p className="font-body text-slate-300 text-lg leading-relaxed mb-8">
+                    <p className="font-body text-[#d8cfc9]/80 text-lg leading-relaxed mb-8">
                         {selectedNode.desc}
                     </p>
                     
@@ -347,30 +347,30 @@ export default function KnowledgeMap() {
                     <div className="space-y-6">
                         {selectedNode.details?.map((detail, index) => {
                             if (detail.type === 'subtitle') {
-                                return <h3 key={index} className="text-xl font-display text-white mt-6 mb-2 border-b border-white/10 pb-1">{detail.content}</h3>;
+                                return <h3 key={index} className="text-xl font-display text-[#f5f2f0] mt-6 mb-2 border-b border-[#d8cfc9]/20 pb-1">{detail.content}</h3>;
                             }
                             if (detail.type === 'code') {
                                 return (
-                                    <div key={index} className="bg-black/50 border border-white/20 rounded-md p-3 font-mono text-xs text-green-400 overflow-x-auto">
+                                    <div key={index} className="bg-[#050510] border border-[#3D4D55]/50 rounded-md p-3 font-mono text-xs text-green-400 overflow-x-auto shadow-inner">
                                        $ {detail.content}
                                     </div>
                                 );
                             }
                             if (detail.type === 'list' && detail.items) {
                                 return (
-                                    <ul key={index} className="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                                    <ul key={index} className="list-disc list-inside text-[#d8cfc9]/90 space-y-1 text-sm marker:text-[#3D4D55]">
                                         {detail.items.map((item, i) => <li key={i}>{item}</li>)}
                                     </ul>
                                 );
                             }
-                            return <p key={index} className="text-slate-400 text-sm leading-relaxed">{detail.content}</p>;
+                            return <p key={index} className="text-[#d8cfc9]/60 text-sm leading-relaxed">{detail.content}</p>;
                         })}
                     </div>
 
                     {!selectedNode.details && (
-                        <div className="bg-white/5 border border-white/10 rounded-xl p-4 mt-8">
-                            <h4 className="text-sm font-bold text-white mb-2 font-display tracking-wide">SYSTEM</h4>
-                            <div className="text-xs font-mono text-slate-500">
+                        <div className="bg-[#3D4D55]/20 border border-[#d8cfc9]/10 rounded-xl p-4 mt-8">
+                            <h4 className="text-sm font-bold text-[#d8cfc9] mb-2 font-display tracking-wide">SYSTEM</h4>
+                            <div className="text-xs font-mono text-[#d8cfc9]/50">
                                 &gt; No additional data found in archive.
                             </div>
                         </div>
@@ -380,7 +380,7 @@ export default function KnowledgeMap() {
         </AnimatePresence>
 
         {/* Footer / Controls Hint */}
-        <div className="pointer-events-auto flex justify-between items-end text-white/30 font-mono text-xs">
+        <div className="pointer-events-auto flex justify-between items-end text-[#d8cfc9]/30 font-mono text-xs">
             <div>
                  [LMB] ROTATE • [RMB] PAN • [scroll] ZOOM
             </div>

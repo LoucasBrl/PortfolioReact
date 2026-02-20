@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { tagOptions } from '../data/tags';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 
 type TagOption = { value: string; label: string; };
 
@@ -21,11 +19,11 @@ export default function Browse() {
     };
 
     return (
-        <section id="projetspage" className="relative min-h-screen w-full py-24 px-6 md:px-12 flex flex-col items-center bg-gray-50">
+        <section id="projetspage" className="relative min-h-screen w-full py-24 px-6 md:px-12 flex flex-col items-center bg-[#f0eceb]">
             <div className="max-w-7xl w-full">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <h2 
-                        className="text-[clamp(3rem,8vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900 leading-none"
+                        className="text-[clamp(3rem,8vw,6rem)] text-transparent bg-clip-text bg-gradient-to-r from-[#10232A] to-[#3D4D55] leading-none"
                         style={{ fontFamily: "'Vina Sans', sans-serif" }}
                     >
                         MES PROJETS
@@ -39,7 +37,7 @@ export default function Browse() {
                                 onChange={handleTagChange}
                                 value={selectedTags}
                                 placeholder="Filtrer par technologies..."
-                                className="font-body text-slate-700"
+                                className="font-body text-[#10232A]"
                                 styles={{
                                     control: (base) => ({
                                         ...base,
@@ -50,17 +48,17 @@ export default function Browse() {
                                         padding: '0.25rem',
                                         boxShadow: 'none',
                                         '&:hover': {
-                                            borderColor: 'rgba(99, 102, 241, 0.5)'
+                                            borderColor: 'rgba(16, 35, 42, 0.5)'
                                         }
                                     }),
                                     multiValue: (base) => ({
                                         ...base,
-                                        backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                                        backgroundColor: 'rgba(61, 77, 85, 0.1)',
                                         borderRadius: '0.5rem',
                                     }),
                                     multiValueLabel: (base) => ({
                                         ...base,
-                                        color: '#4f46e5',
+                                        color: '#10232A',
                                         fontWeight: 600,
                                     }),
                                     menu: (base) => ({
@@ -97,7 +95,7 @@ export default function Browse() {
                                         
                                         {/* Image Container */}
                                         <div className="h-48 overflow-hidden relative">
-                                            <div className="absolute inset-0 bg-indigo-900/10 group-hover:bg-indigo-900/0 transition-colors z-10 w-full h-full"></div>
+                                            <div className="absolute inset-0 bg-[#10232A]/10 group-hover:bg-[#10232A]/0 transition-colors z-10 w-full h-full"></div>
                                             <img 
                                                 src={project.image} 
                                                 alt={project.title} 
